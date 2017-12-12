@@ -1,7 +1,7 @@
 var sass = require('gulp-sass');
 var concat = require('gulp-concat');
 
-var runGulp = function(gulp) {
+var addTasks = function(gulp) {
   var sassFiles = [
     './global/*.scss',
     './components/**/*.scss',
@@ -40,5 +40,5 @@ var runGulp = function(gulp) {
 }
 
 module.exports = {
-    runGulp: runGulp
+    addTasks: addTasks
 };

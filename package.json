@@ -1,6 +1,6 @@
 {
   "name": "tactile-gulp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Integrates gulp into tactile for a clean developer frontend build process.",
   "main": "index.js",
   "scripts": {
