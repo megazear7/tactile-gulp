@@ -1,0 +1,22 @@
+{
+  "name": "tactile-gulp",
+  "version": "1.0.0",
+  "description": "Integrates gulp into tactile for a clean developer frontend build process.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^3.1.0"
+  },
+  "keywords": [
+    "gulp",
+    "tactile",
+    "frontend",
+    "build"
+  ],
+  "author": "Alex Lockhart",
+  "license": "ISC"
+}
