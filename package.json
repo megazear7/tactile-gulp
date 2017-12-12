@@ -14,9 +14,16 @@
   "keywords": [
     "gulp",
     "tactile",
-    "frontend",
-    "build"
+    "frontend build",
   ],
-  "author": "Alex Lockhart",
-  "license": "ISC"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/megazear7/tactile-gulp.git"
+  },
+  "author": "Alex Lockhart <alexlockhart7@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/megazear7/tactile-gulp/issues"
+  },
+  "homepage": "https://github.com/megazear7/tactile-gulp#readme"
 }
