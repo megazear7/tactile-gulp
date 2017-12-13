@@ -1,11 +1,20 @@
 var sass = require('gulp-sass');
 var concat = require('gulp-concat');
+var filter = require('gulp-filter');
+var addSrc = require('gulp-add-src');
+var mainBowerFiles = require('main-bower-files');
+var merge = require('merge-stream');
 
 var addTasks = function(gulp) {
   var sassFiles = [
     './global/*.scss',
     './components/**/*.scss',
     './pages/**/*.scss'];
+
+  var cssFiles = [
+    './global/*.css',
+    './components/**/*.css',
+    './pages/**/*.css'];
 
   var jsFiles = [
     './global/client.js',
@@ -16,8 +25,14 @@ var addTasks = function(gulp) {
     './pages/**/client/*.js'];
 
   gulp.task('sass', function () {
-    return gulp.src(sassFiles)
-      .pipe(sass().on('error', sass.logError))
+    var sassStream = gulp.src(sassFiles)
+      .pipe(sass().on('error', sass.logError));
+
+    var cssStream = gulp.src(cssFiles)
+      .pipe(addSrc(mainBowerFiles()))
+      .pipe(filter("*.css"));
+
+    return merge(sassStream, cssStream)
       .pipe(concat('build.css'))
       .pipe(gulp.dest('./build'));
   });
@@ -28,6 +43,7 @@ var addTasks = function(gulp) {
 
   gulp.task('js', function () {
     return gulp.src(jsFiles)
+      .pipe(addSrc(mainBowerFiles()))
       .pipe(concat('build.js'))
       .pipe(gulp.dest('./build'));
   });
